@@ -3,7 +3,6 @@ public class SorterNumber {
 
      public void sortNumbers(int[] arrayNum) {
 
-
          int endIndex = arrayNum.length - 1 ;
          //2 сортировать
          // 4 3 2 1

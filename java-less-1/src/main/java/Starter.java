@@ -1,3 +1,5 @@
+import java.util.Optional;
+
 public class Starter {
 
 //1 вытаскивать
@@ -12,52 +14,27 @@ public class Starter {
 //    ReducerData
     public static void main(String[] array) {
 
+        MyClassEncapsulated jonh = new MyClassEncapsulated();
+        jonh.setAge(100);
+        jonh.setName("Jonh");
 
-        ExtractorData dataNumbers = new ExtractorData();
-        int[] arrayNumbers = dataNumbers.extractData();
-
-
-        SorterNumber sorterInt = new SorterNumber();
-        sorterInt.sortNumbers(arrayNumbers);
-
-        // 3 фильтровать
-        // https://javarush.ru/groups/posts/operator-deleniya-po-modulyu
-        // достаю максимальное количество элементов после фильтрации
-        // числа которые делятся на 2 без остатка
-
-        int maximumNumberAcceptedItems = 0;
-        for (int i = 0; i < arrayNumbers.length; i++) {
-            //  arrayNumbers[i] / 2 = 0
-            if (arrayNumbers[i] % 2 == 0) {
-                maximumNumberAcceptedItems = maximumNumberAcceptedItems + 1;
-            }
-        }
-
-        // Создаю новый массив для отфильтрованных элементов
-        int[] filteredElements = new int[maximumNumberAcceptedItems];
-        // заполняю массив
-        int indexFilteredArray = 0;
-        for (int i = 0; i < arrayNumbers.length; i++) {
-            //  arrayNumbers[i] / 2 = 0
-            if (arrayNumbers[i] % 2 == 0) {
-                filteredElements[indexFilteredArray] = arrayNumbers[i];
-                indexFilteredArray = indexFilteredArray + 1;
-            }
-        }
+        System.out.println(jonh.getAge() + "  " + jonh.getName());
 
 
-        //4 выделять что то одно
-        // самое большое число
 
-        int maxNumber = filteredElements[0];
-        for (int i = 0; i < filteredElements.length; i++) {
-          if (maxNumber < filteredElements[i]) {
-              maxNumber = filteredElements[i];
-          }
-        }
-
-
-        System.out.println("MAX NUMBER " + maxNumber);
+//        ExtractorData dataNumbers = new ExtractorData();
+//        int[] arrayNumbers = dataNumbers.extractData();
+//
+//        SorterNumber sorterInt = new SorterNumber();
+//        sorterInt.sortNumbers(arrayNumbers);
+//
+//        FilterNumber filter = new FilterNumber();
+//        int[] filteredElements = filter.filterByTwo(arrayNumbers);
+//
+//        ReducerData reducerMax = new ReducerData();
+//        int maxNumber = reducerMax.getMaxNumber(filteredElements);
+//
+//        System.out.println("MAX NUMBER " + maxNumber);
 
     }
 }
